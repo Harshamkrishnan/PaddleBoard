@@ -1,0 +1,17 @@
+h1 {
+    color: brown;
+    text-align: center;
+}
+
+h4 {
+    text-align: center;
+    color: chocolate;
+}
+
+.main{
+    width: 100%;
+    height: 100vh;
+    position: absolute;
+    overflow: hidden;
+    background-color: aqua;
+}
