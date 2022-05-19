@@ -13,16 +13,17 @@
     border-radius: 50%;
 }
 
-.rectangle {
+.paddle1 {
     position: absolute;
     height: 10px;
     width: 100px;
     background-color: rgb(72, 232, 19);
     bottom: 20%;
-    right: 20%;
+    /*right: 20%;
+    left: 40%;*/
   }
 
-  .rectangle1 {
+  .paddle2 {
     position: absolute;
     height: 10px;
     width: 100px;
