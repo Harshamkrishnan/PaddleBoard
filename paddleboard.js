@@ -29,41 +29,66 @@ let paddle1 = document.getElementById('paddle1');
 /*let paddle2 = document.getElementsByClassName('.paddle2');*/
 let moveBy = 100;
 
-// window.addEventListener('load', () =>{
-//     paddle1.style.position = 'absolute';
-//     paddle1.style.left = 0;
-//     paddle1.style.top = 0;
-//     /*paddle2.position = 'absolute';
-//     paddle2.right = 0;
-//     paddle2.top = 0;*/
-// });
 
 window.addEventListener('keyup', (e) =>{
     console.log(`event called ${e.key}`);
-    console.log(paddle1.style.left);
+    console.log(`Left position: ${paddle1.offsetTop}`);
     let newPos = 0;
     switch(e.key){
         case 'ArrowLeft' :
-            newPos = parseInt(paddle1.style.left) - moveBy;
-            console.log(`Arrow left called ${newPos}`);
-            paddle1.style.left = newPos;
+            moveLeft(paddle1)
             break;
         case 'ArrowRight' :
-            newPos = parseInt(paddle1.style.left) + moveBy;
-            console.log(`Arrow right called ${newPos}`);
-            paddle1.style.left = newPos;
+            moveRight(paddle1)
+            // paddle1.focus();
+            // newPos = parseInt(paddle1.style.left) + moveBy;
+            // console.log(`Arrow right called ${newPos}`);
+            // paddle1.style.left = newPos;
             break;
         case 'ArrowUp' :
-            newPos = parseInt(paddle1.style.top) + moveBy;
-            console.log(`Arrow up called ${newPos}`);
-            paddle1.style.left = newPos;
+            moveUp(paddle1)
+            // paddle1.focus();
+            // newPos = parseInt(paddle1.style.top) + moveBy;
+            // console.log(`Arrow up called ${newPos}`);
+            // paddle1.style.left = newPos;
             break;
         case 'ArrowDown' :
-            newPos = parseInt(paddle1.style.top) - moveBy;
-            console.log(`Arrow down called ${newPos}`);
-            paddle1.style.left = newPos;
+            moveDown(paddle1)
+            // paddle1.focus();
+            // newPos = parseInt(paddle1.style.top) - moveBy;
+            // console.log(`Arrow down called ${newPos}`);
+            // paddle1.style.left = newPos;
             break;
         case 'Default' :
             break;
+    }
+
+    function moveLeft(element) {
+        element.focus();
+        newPos = parseInt(element.offsetLeft) - moveBy;
+        newPos < 0 ? 0 : newPos
+        console.log(`Arrow left called ${newPos}`);
+        element.style.left = `${newPos}px`;
+    }
+
+    function moveRight(element) {
+        element.focus();
+        newPos = parseInt(element.offsetLeft) + moveBy;
+        console.log(`Arrow Right called ${newPos}`);
+        element.style.left = `${newPos}px`;
+    }
+    function moveUp(element) {
+        element.focus();
+        newPos = parseInt(element.offsetTop) + moveBy;
+        newPos < 0 ? 0 : newPos
+        console.log(`Arrow Up called ${newPos}`);
+        element.style.top = `${newPos}px`;
+    }
+    function moveDown(element) {
+        element.focus();
+        newPos = parseInt(element.offsetTop) - moveBy;
+        newPos < 0 ? 0 : newPos
+        console.log(`Arrow Down called ${newPos}`);
+        element.style.top = `${newPos}px`;
     }
 })
