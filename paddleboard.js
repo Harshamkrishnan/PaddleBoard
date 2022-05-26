@@ -8,7 +8,7 @@ function validate()
     }
     else
     {
-        window.location.href = `C:\\Users\\harsh\\OneDrive\\Desktop\\PaddleBoard\\html\\welcome.html?name=${n}`;
+        window.location.href = `html/welcome.html?name=${n}`;
         // file:///C:/UsersharshOneDriveDesktopPaddleBoardhtmlwelcome.html
         return true;
     }
